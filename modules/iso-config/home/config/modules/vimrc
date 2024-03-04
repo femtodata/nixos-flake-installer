@@ -1,0 +1,78 @@
+set incsearch
+set smartcase
+set tabstop=2
+set expandtab
+set shiftwidth=2
+set textwidth=0
+set autoindent
+set hidden
+set laststatus=2
+set showmatch
+set hlsearch
+set ignorecase
+set backspace=indent,eol,start
+set cursorline
+
+:set statusline=%m\ %t\ %y\ %{&ff};\ [%c,%l]\ %p%%
+
+" " pathogen?
+" execute pathogen#infect()
+" 
+syntax on
+filetype plugin on
+" 
+" Uncomment the following to have Vim load indentation rules according to the
+" detected filetype. Per default Debian Vim only load filetype specific
+" plugins.
+if has("autocmd")
+  filetype indent on
+endif
+" 
+" let Tlist_Process_File_Always=1
+
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O><F2>
+set pastetoggle=<F2>
+
+colorscheme default
+
+hi StatusLine ctermfg=White
+
+" map <leader>f :NERDTreeFind<cr>
+
+
+" ctrlp
+
+" set runtimepath^=~/.vim/bundle/ctrlp.vim
+" let g:ctrlp_cmd = 'CtrlPMixed'
+" let g:ctrlp_extensions = ['line', 'dir','buffertag', 'tag']
+" 
+" let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }
+" 
+" func! MyCtrlPMappings()
+"     nnoremap <buffer> <silent> <c-@> :call <sid>DeleteBuffer()<cr>
+" endfunc
+" 
+" func! s:DeleteBuffer()
+"     let line = getline('.')
+"     let bufid = line =~ '\[\d\+\*No Name\]$' ? str2nr(matchstr(line, '\d\+'))
+"         \ : fnamemodify(line[2:], ':p')
+"     exec "bd" bufid
+"     exec "norm \<F5>"
+" endfunc
+
+" slime etc
+
+" let g:slime_target = "tmux"
+" 
+" map <Leader>s :SlimuxREPLSendLine<CR>
+" vmap <Leader>s :SlimuxREPLSendSelection<CR>
+" map <Leader>a :SlimuxShellLast<CR>
+" map <Leader>k :SlimuxSendKeysLast<CR>
+
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType markdown setlocal shiftwidth=4 tabstop=4
+
+noremap <TAB> <C-w>
+
+
