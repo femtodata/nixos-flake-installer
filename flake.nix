@@ -42,7 +42,6 @@
           home-manager.useUserPackages = true;
           home-manager.users.nixos = {
             imports = [
-              ./modules/home
               ./modules/iso-config/home
             ];
           };
