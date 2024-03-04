@@ -19,4 +19,4 @@
   
   The vm variant is suitable for headless libvirt / qemu vms, console output will be visible on bootup.
 
-- To install, once installer boots, if `prep.sh` or `prep-zfs.sh` needs to be edited, copy out of `config` to edit (e.g., set disks, etc, particularly in the zfs case). Run with sudo, beware there are no prompts, will start by wiping disks. Recommend using the vm variant to get a feel for things.
+- To install, once installer boots, if `prep.sh` or `prep-zfs.sh` needs to be edited, copy out of `config` to edit (e.g., set disks, etc, particularly in the zfs case). Run with sudo, beware there are no prompts, will start by wiping disks. Recommend using the vm variant to get a feel for things, in which case, uncomment the `vm console` section in `extra-config.nix` to get proper tty output.
