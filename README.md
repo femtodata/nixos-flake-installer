@@ -6,6 +6,8 @@
 
 - For the installed system, set `hostname` and `username` in `modules/iso-config/home/config/extra-config.nix`. Optionally set `hashedPassword` in the user definition section.
 
+- `modules/iso-config/home/config` contains the flake for the installed system; edit, add modules, imports, etc as desired.
+
 - To build the iso:
   ```
   nix build \.#nixosConfigurations.iso.config.system.build.isoImage -o iso
@@ -16,3 +18,5 @@
   ```
   
   The vm variant is suitable for headless libvirt / qemu vms, console output will be visible on bootup.
+
+- To install, once installer boots, if `prep.sh` or `prep-zfs.sh` needs to be edited, copy out of `config` to edit (e.g., set disks, etc, particularly in the zfs case). Run with sudo, beware there are no prompts, will start by wiping disks. Recommend using the vm variant to get a feel for things.
