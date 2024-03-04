@@ -51,8 +51,6 @@
 
     in rec {
 
-      packages.${system} = import ./pkgs nixpkgs.legacyPackages.${system};
-
       nixosConfigurations = {
 
         iso = nixpkgs.lib.nixosSystem {

@@ -48,7 +48,7 @@ in
       openssh.authorizedKeys.keys = [
         "ssh-keys-go-here"
       ];
-      hashedPassword = "password-hashed-with-mkpassword";
+      # hashedPassword = "password-hashed-with-mkpassword";
     };
   };
 
